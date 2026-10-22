@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Robbie Yamashita">
+  <meta name="description" content="The portfolio of Robbie Yamashita, presented in the style of an RFC document.">
+
+  <meta property="og:site_name" content="Robbie Yamashita">
+  <meta property="og:title" content="Robbie Yamashita | RFC">
+  <meta property="og:description" content="A technical portfolio presented in the style of an Internet Request for Comments document.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wobbie.me/rfc/">
+  <meta property="og:image" content="https://wobbie.me/assets/images/rfc-og.png">
+  <meta property="og:image:alt" content="Minimalist RFC-style calling card for Robbie Yamashita's portfolio.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robbie Yamashita | RFC">
+  <meta name="twitter:description" content="A technical portfolio presented in the style of an Internet Request for Comments document.">
+  <meta name="twitter:image" content="https://wobbie.me/assets/images/rfc-og.png">
+  <meta name="twitter:image:alt" content="Minimalist RFC-style calling card for Robbie Yamashita's portfolio.">
+
+  <title>Robbie Yamashita | Systems & Web Developer</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="rfc.css">
+</head>
+<body>
+  <main class="rfc">
+    <section class="page">
+      <pre>Independent Submission                                    Robbie Yamashita
+Request for Comments: 200                                     October 2026
+Updates: 404                                                   Independent
+Category: Informational
+ISSN: 2070-1721
+
+
+                      Portfolio of Robbie Yamashita
+
+
+Status of This Memo
+
+   This memo describes information to the Internet community.  It does
+   not specify an Internet standard of any kind.  Distribution of
+   this memo is unlimited.
+
+Copyright Notice
+
+   Copyright (C) Robbie Yamashita (2026).  All Rights Reserved.
+
+Abstract
+
+   This memo specifies the portfolio of Robbie Yamashita.  It describes
+   the author's projects, smaller experiments, skills, and contact
+   information, and updates RFC 404, in which this portfolio was
+   previously reported as not found.  The dataset of projects is
+   normative; every rendered representation of this site is
+   informative.</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 1]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+Table of Contents
+
+   1.  Introduction .................................................. 2
+   2.  Projects ...................................................... 3
+      2.1.  JournalSec ............................................... 3
+      2.2.  UBE ...................................................... 3
+      2.3.  Dekiru ................................................... 4
+      2.4.  DES, by hand ............................................. 5
+      2.5.  OtakuLog ................................................. 5
+      2.6.  OffRed ................................................... 6
+      2.7.  WobbiesToolBox ........................................... 6
+   3.  Lab ........................................................... 7
+   4.  Skills ........................................................ 8
+   5.  Security Considerations ....................................... 9
+   6.  References .................................................... 9
+   Author's Address ................................................. 10
+   Full Copyright Statement ......................................... 10
+
+
+1.  Introduction
+
+   The author is a hobbyist developer.  An interest in cybersecurity
+   drove a desire to understand what programs actually do under the
+   hood.  That question led deeper: debugging led to disassembly,
+   disassembly led to PE headers and instructions, and instructions led
+   to memory layouts, data and file formats, and eventually to the
+   computational machinery and electrical currents beneath the
+   interfaces used every day.
+
+   The author learns by building.  Sometimes that is a conventional
+   application; more often it is a tool built to understand a technology
+   or eliminate a repetitive task.  Whenever the author picks up a new
+   language, his ritual is to implement DES by hand, bit by bit and
+   table by table.  By the time a cipher encrypts correctly, the
+   language's rough edges have been mapped.
+
+   The author is not a senior engineer and does not pretend to be one on
+   the Internet.  These projects are the working notes of a developing
+   programmer, presented as honestly as possible -- including what is
+   unfinished.
+
+1.1.  Requirement Language
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this memo are to be interpreted as described in BCP 14
+   [RFC2119] when, and only when, they appear in all capitals.  They
+   rarely do.</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 2]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+2.  Projects
+
+   Section 2 describes selected projects.  Each entry MUST include the
+   following fields:
+
+   title:      A short name for the project.
+   status:     The state of the project, as the author honestly assesses
+               it.
+   stack:      The languages, frameworks, and tools used.
+   topics:     The subject areas the project touches.
+   summary:    A one-line description.
+   problem:    The problem the project sets out to solve.
+   approach:   How the project sets out to solve it.
+   note:       Caveats on the status above.
+   Each entry MAY additionally disclose its source.  Where source is
+   published, a URI is given; where it is not, the entry states "source
+   - private until it deserves to be public".  Nothing further is
+   implied.
+
+2.1.  JournalSec
+
+   Title:      JournalSec - encrypted local journal
+   Kind:       local app
+   Status:     prototype [unaudited]
+   Stack:      Express, AES-256-GCM, Argon2id
+   Topics:     cryptography; password-based key derivation; protected
+               data; practical security implementation
+   Summary:    A locally oriented journal with encrypted storage: keys
+               derived from a passphrase, entries sealed with
+               authenticated encryption.
+   Problem:    A journal is the most personal data there is, and "it's
+               just on my machine" is not a security model.  The goal
+               was to practice best security practices rather than ship
+               a product.
+   Approach:   Passphrases are stretched with Argon2id into an envelope-
+               wrapped encryption key; entries are sealed with
+               AES-256-GCM so confidentiality and integrity are both
+               covered.  Everything runs locally on a small Express
+               service; the attack surface is the point of this project.
+   Note:       Prototype.  It has not had an independent security audit
+               and should not be trusted with data you cannot afford to
+               lose.  The crypto primitives are standard; the
+               surrounding code is hobbyist quality.
+   Source:     private until it deserves to be public
+
+2.2.  UBE
+
+   Title:      UBE - Universal Beatmap Extractor
+   Kind:       format tooling
+   Status:     active development
+   Stack:      JavaScript, Node</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 3]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+   Topics:     file-format parsing; data modelling; format
+               interoperability; archive extraction; audio/image assets
+   Summary:    A beatmap converter for mania rhythm games: parse
+               multiple formats into one shared internal representation,
+               convert between them.
+   Problem:    Every rhythm game speaks its own beatmap dialect.  Charts
+               people care about are locked inside format-specific
+               silos, and existing converters tend to cover one narrow
+               pairing at a time.
+   Approach:   Each supported format gets a parser that maps onto a
+               single intermediate representation: timing, lanes, notes,
+               and metadata as plain data.  Converters are just
+               parser/serializer pairs, which makes adding a new format
+               a matter of writing one side of the mapping.  Assets
+               (audio, images) are pulled from the game-specific archive
+               or format during extraction.
+   Note:       osu! parsing is the furthest along.  Quaver, StepMania
+               and beatmania are targeted formats, not finished ones;
+               treat support as partial until the parser tables say
+               otherwise.  Beatmap editing is future work, not a shipped
+               feature.
+   Source:     private until it deserves to be public
+
+2.3.  Dekiru
+
+   Title:      Dekiru - Japanese sentence learning tool
+   Kind:       web app
+   Status:     active development
+   Stack:      Next.js, SQLite, Python, SudachiPy
+   Topics:     NLP / morphological analysis; language learning; data
+               pipelines; SQLite full-text search; Japanese linguistics
+   Summary:    A Japanese reading tool built around real Tatoeba
+               sentences: tap any word to see its meaning, readings, and
+               full conjugation table with the current inflection
+               highlighted.
+   Problem:    Vocabulary apps teach words in isolation.  Reading real
+               Japanese means encountering words mid-conjugation, inside
+               polite constructions, stacked with auxiliary verbs; none
+               of which maps cleanly onto a dictionary entry.  Most
+               tools either skip that gap or paper over it with
+               furigana.
+   Approach:   A Python pipeline parses JMdict, KANJIDIC2, and Tatoeba
+               into SQLite, then runs SudachiPy over every sentence to
+               tokenize and resolve each morpheme to its dictionary
+               entry.  A grouping pass merges auxiliary chains into
+               learner-facing display units (one clickable chunk, not
+               four).  The Next.js frontend renders tappable sentence
+               tiles; tapping one opens a word card showing the head
+               word's conjugation table with the active inflection row
+               highlighted, followed by a morpheme breakdown of each
+               piece (honorific prefix, verb stem, auxiliary) as its own</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 4]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+               mini dictionary entry.
+   Note:       Core pipeline and UI are working.  Grammar grouping
+               covers honorific, suru-chain, and te-auxiliary patterns.
+               Sentence-level dependency parsing (subject/object
+               relationships) is the next planned layer.
+   Source:     private until it deserves to be public
+
+2.4.  DES, by hand
+
+   Title:      DES, by hand - from-scratch DES in every language I learn
+   Kind:       learning exercise
+   Status:     ongoing - multi-language
+   Stack:      Python, JavaScript, C++ (planned), C# (planned)
+   Topics:     block ciphers; Feistel networks; bit manipulation;
+               S-Boxes; key schedules; cli tools
+   Summary:    A recurring ritual: implement DES from nothing in each
+               new language picked up; no crypto libraries, just loops,
+               literal tables, and bit-by-bit string surgery.
+   Problem:    Tutorials teach syntax; they do not teach how a language
+               feels under real work.  The author wanted one fixed, non-
+               trivial problem with enough structure (real logic, real
+               bit manipulation, real edge cases) to force a pass
+               through a language's loops, strings, types, and idioms.
+   Approach:   The specification is followed literally and awkwardly on
+               purpose: initial permutation, expansion, S-Box lookups,
+               P-Box, and the key schedule are all declared as plain
+               table arrays.  Bits are handled by indexing strings; if
+               the character at position n is `0` do this, if it is `1`
+               do that.  Only loops, functions, and the occasional
+               class; native API calls are kept to a minimum.  A small
+               CLI takes a hex or plaintext key plus a mode and outputs
+               the encrypted result in hex.  The constraint is the
+               point; by the time DES encrypts and decrypts correctly,
+               the language's rough edges are mapped.
+   Note:       Python and JavaScript versions work end to end.  C++ and
+               C# are planned, with more languages after; each
+               implementation lives in its own folder of one repository,
+               and the collection itself is the project.
+   Source:     private until it deserves to be public
+
+2.5.  OtakuLog
+
+   Title:      OtakuLog - anime tracking web app
+   Kind:       web app
+   Status:     stable
+   Stack:      Vite, vanilla JS, Tailwind CSS, REST APIs
+   Topics:     application design; API-driven data; responsive
+               interfaces; lightweight frontend architecture; persistent
+               preferences
+   Summary:    An anime-tracking application built on API-driven data,
+               with preferences and watch state kept locally.</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 5]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+   Problem:    Tracking what you watch should not require an account on
+               someone else's service, and most trackers are heavier
+               than the problem deserves.
+   Approach:   A deliberately lightweight frontend: Vite for tooling,
+               vanilla JavaScript for behaviour, Tailwind for styling.
+               Show and episode data comes from local storage so the app
+               stays useful without a backend.
+   Note:       Stable and usable.  Maintenance-style development; fixes
+               and small improvements rather than feature pushes.
+   Source:     private until it deserves to be public
+
+2.6.  OffRed
+
+   Title:      OffRed - local SubReddit archiver
+   Kind:       desktop app
+   Status:     working prototype
+   Stack:      Electron, SQLite
+   Topics:     desktop software; local persistence; data retrieval; web
+               tech on a desktop runtime
+   Summary:    An Electron application for archiving Reddit content
+               locally, stored in a real database you own.
+   Problem:    Content posted to platforms disappears: deleted, removed,
+               privatized.  Archiving it means pulling it out of the
+               platform context and keeping it somewhere durable and
+               queryable.
+   Approach:   Electron hosts a familiar web-technology UI while the
+               data layer is a local SQLite database: retrieval,
+               storage, and browsing all run on the machine, no server
+               required.  The interesting part was the seam where web
+               conventions meet a desktop runtime and a relational
+               schema.
+   Note:       A working prototype, not a polished product.  Core
+               retrieval and storage work; the UI and edge cases are
+               where the remaining effort sits.
+   Source:     private until it deserves to be public
+
+2.7.  WobbiesToolBox
+
+   Title:      WobbiesToolBox - python utilities &amp; media workflows
+   Kind:       utilities
+   Status:     active
+   Stack:      Python, FFmpeg, Git
+   Topics:     command-line tools; automation; file processing;
+               eliminating repetitive work
+   Summary:    A collection of personal Python utilities and media-
+               processing workflows; scripts that exist because a task
+               was repetitive and a tool was more interesting than doing
+               it by hand.
+   Problem:    Repetitive media and file tasks: converting, renaming,
+               extracting, checking, batching.  Each one is small, but
+               together they eat time and attention.</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 6]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+   Approach:   Small, composable command-line tools, most of them
+               wrapping FFmpeg for the heavy lifting.  The design rule
+               is that a tool must justify its existence the third time
+               the task comes up; otherwise the shell history entry was
+               enough.
+   Note:       Continuously growing and being pruned.  Some tools
+               graduate into regular use, some get deleted when the
+               workflow changes.  That is the point of the collection.
+   Source:     private until it deserves to be public
+
+3.  Lab
+
+   The Lab collects smaller experiments, unfinished ideas, and earlier
+   iterations.  Entries in this section are talking points, not claims;
+   links are provided only where things actually exist.  Readers SHOULD
+   interpret the contents of this section accordingly.
+
+3.1.  modular discord bot
+
+   Tag:        bot
+   Summary:    discord.js bot with plugin-style commands and self-hosted
+               local AI integration using llama.cpp
+
+3.2.  local LLM experiments
+
+   Tag:        ml
+   Summary:    running, poking at and wiring small language models into
+               local tooling
+
+3.3.  OBS / audio automation
+
+   Tag:        media
+   Summary:    scripts and hotkey workflows for streaming and media
+               production
+
+3.4.  nfo site
+
+   Tag:        web
+   Summary:    the author's main site styled as ASCII / NFO.  Serves
+               as the "No JavaScript" version of their main site.
+   URI:        https://wobbie.me/nfo/
+
+3.5.  rfc site
+
+   Tag:        web
+   Summary:    the author's main site styled as an RFC - the portfolio
+               as a protocol document.
+   URI:        https://wobbie.me/rfc/</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 7]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+3.6.  creative-coding sketches
+
+   Tag:        gfx
+   Summary:    small WebGL / canvas experiments; several mutated into
+               the machine behind the author's site.
+
+4.  Skills
+
+   Section 4 enumerates the author's proficiency in the languages and
+   stacks he uses.  These figures are self-assessed and, like all self-
+   assessed figures, carry no warranty (see the Full Copyright
+   Statement).
+
+4.1.  Proficiency Tiers
+
+   Each technology below is assigned exactly one of the following tiers,
+   listed from strongest to weakest:
+
+   primary:    Used regularly.  The author can build with it
+               independently without constantly consulting
+               documentation.
+
+   proficient: The author can work with it comfortably and understands
+               its common patterns and concepts, though it is not
+               necessarily the strongest technology.
+
+   knowledge:  The author has built meaningful things with it and
+               understands the fundamentals, but has less experience
+               with it than with the primary technologies.
+
+   familiar:   Used in a project or course.  The author understands the
+               basics, but would need to revisit the documentation
+               before doing substantial work with it.
+
+   exposure:   Encountered or experimented with, without enough
+               practical experience to claim proficiency.
+
+4.2.  inspect(_languages)
+
+   Javascript          primary
+   Python              proficient
+   C++                 knowledge
+   C#                  familiar
+   Go                  familiar
+   Bash                exposure</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 8]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+4.3.  Web Technologies
+
+   Tailwind            primary
+   CSS 3               proficient
+   Express.js          proficient
+   HTML5               proficient
+   Bootstrap           knowledge
+   Next.js             familiar
+   Vite                familiar
+
+4.4.  Databases
+
+   MongoDB             knowledge
+   SQLite              knowledge
+   MySQL               familiar
+   PostgreSQL          familiar
+
+4.5.  Runtimes &amp; Platforms
+
+   Node.js             proficient
+   .NET                knowledge
+   Linux               knowledge
+   Windows             knowledge
+   WSL                 knowledge
+
+4.6.  Tools &amp; Development
+
+   Git                 proficient
+   Github              proficient
+   npm                 proficient
+   VS Code             proficient
+   Github Actions      knowledge
+   Docker              exposure
+   Postman             exposure
+
+5.  Security Considerations
+
+   This memo introduces no known vulnerabilities of its own.  It does,
+   however, disclose the location of the author's laboratory (Section
+   3), where vulnerabilities are introduced on a regular basis.
+   Findings may be reported to the author; see the Author's Address.
+
+6.  References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119, DOI
+              10.17487/RFC2119, March 1997.
+
+   [FIPS46]   National Bureau of Standards, "Data Encryption
+              Standard", FIPS PUB 46, January 1977.  (The author's
+              preferred onboarding exercise; see Section 1.)</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 9]
+--------------------------------------------------------------------------</pre>
+      </footer>
+    </section>
+    <section class="page">
+      <pre>RFC 200              Portfolio of Robbie Yamashita            October 2026
+
+
+   [SITE]     Yamashita, R., "WOBBIE.me", &lt;https://wobbie.me&gt;.
+
+Author's Address
+
+   Robbie Yamashita
+   GitHub:  wwobbiee
+   EMail:   contact@wobbie.me
+   URI:     https://wobbie.me
+
+   The URI field refers the reader to the very document currently being
+   read.  This memo makes no apology for the recursion.
+
+Full Copyright Statement
+
+   Copyright (C) Robbie Yamashita (2026).  All Rights Reserved.
+
+   This document may be copied, published, and distributed in whole or
+   in part, provided that this copyright notice is retained.  Permission
+   is granted to create derivative works for non-commercial purposes,
+   provided that such works clearly indicate that they are derived from
+   this document.
+
+   This document is provided "AS IS", without warranty of any kind,
+   express or implied.  The author shall not be liable for any damages
+   arising from the use of this document.
+
+   Colophon: no frameworks were harmed in the production of this memo.</pre>
+      <footer class="pgfoot">
+        <pre>Yamashita                      Informational                      [Page 10]</pre>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

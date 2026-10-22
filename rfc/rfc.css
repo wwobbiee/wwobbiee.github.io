@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+main.rfc {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+  width: 75ch;
+  max-width: calc(100% - 2rem);
+  margin-inline: auto;
+  font-size: clamp(0.5rem, 0.324rem + 0.751vw, 1rem);
+}
+.rfc pre {
+  font-size: 1em;
+  line-height: 1.2;
+}
+.rfc .page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(58 * 1.2em);
+}
+.rfc .page > pre {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: auto;
+}
+.rfc footer.pgfoot {
+  flex: 0 0 auto;
+}
+.rfc footer.pgfoot pre {
+  overflow: visible;
+}

@@ -4,204 +4,203 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Robbie Yamashita">
-  <meta name="description" content="Robbie Yamashita's personal site for projects, experiments, and other things I'm working on | Currently under development.">
+  <meta name="description" content="Robbie Yamashita's portfolio | Cybersecurity, low-level systems, and software projects.">
 
-  <meta property="og:title" content="Robbie Yamashita | Under construction">
-  <meta property="og:description" content="Robbie Yamashita's personal site for projects, experiments, and other things I'm working on | Currently under development.">
+  <meta property="og:site_name" content="Robbie Yamashita">
+  <meta property="og:title" content="Robbie Yamashita | Systems & Web Developer">
+  <meta property="og:description" content="Cybersecurity, low-level systems, and software projects.">
   <meta property="og:type" content="website">
-  <title>Robbie Yamashita | Under Development</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    main {
-      width: 75ch;
-      max-width: 100%;
-      margin-inline: auto;
-    }
-    pre {
-      text-align: left;
-    }
-  </style>
+  <meta property="og:url" content="https://wobbie.me/">
+  <meta property="og:image" content="https://wobbie.me/assets/images/main-og.png">
+  <meta property="og:image:alt" content="A 3D canvas-rendered graphic calling card for Robbie Yamashita's portfolio.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robbie Yamashita | Systems & Web Developer">
+  <meta name="twitter:description" content="Cybersecurity, low-level systems, and software projects">
+  <meta name="twitter:image" content="https://wobbie.me/assets/images/main-og.png">
+  <meta name="twitter:image:alt" content="A 3D canvas-rendered graphic calling card for Robbie Yamashita's portfolio.">
+
+  <title>Robbie Yamashita | Systems & Web Developer</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script type="module" src="js/main.mjs"></script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=./nfo/">
+  </noscript>
 </head>
 <body>
-  <main>
-    <pre>
-Independent Submission                                    Robbie Yamashita
-Request for Comments: 404                                      Independent
-Obsoletes: 2795                                             September 2026
-Category: Informational
-
-
-
-                Portfolio of Robbie Yamashita (404 Not Found)
-
-
-Status of this Memo
-
-    This memo describes information to the Internet community. It does
-    not specify an Internet standard of any kind. Distribution of this
-    memo is unlimited.
-
-Copyright Notice
-
-    Copyright (C) Robbie Yamashita (2026).  All Rights Reserved.
-
-Abstract
-
-    This memo describes the portfolio site for Robbie Yamashita. At the
-    time of publication, the site is incomplete and therefore provides
-    limited information regarding the author's work.
-
-    Future revisions are expected to include projects, technical
-    experience, and other material of unspecified relevance. No timeline
-    for completion is guaranteed. Readers are encouraged to return at a 
-    later date.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yamashita                    Informational                        [Page 1]
---------------------------------------------------------------------------
-RFC 404       Portfolio of Robbie Yamashita (404 Not Found)      Sept 2026
-
-
-Full Copyright Statement
-
-    Copyright (C) Robbie Yamashita (2026).  All Rights Reserved.
-
-    This document may be copied, published, and distributed in whole or in
-    part, provided that this copyright notice is retained. Permission is
-    granted to create derivative works for non-commercial purposes,
-    provided that such works clearly indicate that they are derived from
-    this document.
-
-    This document is provided "AS IS", without warranty of any kind,
-    express or implied. The author shall not be liable for any damages
-    arising from the use of this document.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yamashita                    Informational                        [Page 2]
---------------------------------------------------------------------------
-RFC 404       Portfolio of Robbie Yamashita (404 Not Found)      Sept 2026
-
-
-Author's Addresses
-    Robbie Yamashita (author)
-    EMail: contact@wobbie.me
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yamashita                    Informational                        [Page 3]
-    </pre>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="static-emblem" aria-hidden="true">
+    <svg viewBox="0 0 200 200" width="46vmin" height="46vmin">
+      <circle cx="100" cy="100" r="88" fill="none" stroke="#292927" />
+      <circle cx="100" cy="100" r="62" fill="none" stroke="#393934" />
+      <polygon points="100,42 150,73 150,127 100,158 50,127 50,73" fill="none" stroke="#D9FF38" />
+      <line x1="100" y1="42"  x2="100" y2="158" stroke="#292927" />
+      <line x1="50"  y1="73"  x2="150" y2="127" stroke="#292927" />
+      <line x1="50"  y1="127" x2="150" y2="73"  stroke="#292927" />
+    </svg>
+  </div>
+  <div class="scan-grid" aria-hidden="true"></div>
+
+  <header>
+    <a class="head-logo" href="#top">WOBBIE<span>.me</span></a>
+    <nav class="site-nav" aria-label="primary">
+      <a href="#index">index</a>
+      <a href="#lab">lab</a>
+      <a href="#skills">skills</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <button id="cmd-open" class="cmd-hint" title="Command bar (CTRL+K or : )">[ : ]</button>
+  </header>
+
+  <div class="select-none">
+    <div class="mobile-head">
+      <a class="head-logo" href="#top">WOBBIE<span>.me</span></a>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="primary">
+      <a data-loc="index"   href="#index">index</a>
+      <a data-loc="lab"     href="#lab">lab</a>
+      <a data-loc="skills"  href="#skills">skills</a>
+      <a data-loc="about"   href="#about">about</a>
+      <a data-loc="contact" href="#contact">contact</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="hero" id="hero" aria-label="introduction">
+      <figure id="portrait" aria-label="Portrait of Robbie Yamashita">
+        <div class="portrait-frame">
+          <div id="ios-warn" class="relative z-50 hidden"><span class="absolute top-0 left-0 text-bg">tap me to enable motion.</span></div>
+          <img src="./assets/images/profile-lg.webp" alt="Portrait of wobbie." loading="lazy">
+        </div>
+        <figcaption>User. 0.1 - Robbie</figcaption>
+      </figure>
+
+      <div class="hero-text">
+        <p class="subscript">home sys - projects / tools / experiments</p>
+        <h1 class="hero-name" id="hero-name" aria-label="Robbie Yamashita">
+          <span class="hero-line first">Robbie</span>
+          <span class="hero-line last">Yamashita</span>
+        </h1>
+        <p class="hero-subtitle">
+          A hobbyist developer taking software apart to see how it works; parsers, file formats, cryptographic ciphers, and the small tools that fall out of my curious mind.
+        </p>
+        <ul class="hero-metadata">
+          <li>wobbie.me</li>
+          <li>build 2026.10</li>
+          <li>js / py / cpp</li>
+          <li>focus: parsing &middot; internals &middot; tools</li>
+          <li class="hero-hint">select a record -  mutate the machine</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="index" class="section" aria-labelledby="index-h">
+      <h2 id="index-h" class="sec-h"><span>01</span>index</h2>
+      <div id="rows" class="rows"></div>
+    </section>
+
+    <section id="lab" class="section" aria-labelledby="lab-h">
+      <h2 id="lab-h" class="sec-h"><span>02</span>lab</h2>
+      <p class="sec-lead">
+        Smaller experiments, unfinished ideas and earlier iterations. Talking points, not claims, links where things actually exist.
+      </p>
+      <div id="lab-grid" class="lab-grid"></div>
+    </section>
+
+    <section id="skills" class="section" aria-labelledby="skills-h">
+      <h2 id="skills-h" class="sec-h"><span>03</span>skills</h2>
+      <div id="skills-root"></div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-h">
+      <h2 id="about-h" class="sec-h"><span>04</span>about</h2>
+      <div class="about-cols">
+        <p>
+          I'm a hobbyist developer. My interest in cybersecurity drove the passion to understand what programs actually <em>do</em>
+          under the hood. That question led me deeper: debugging led to disassembly, disassembly led to PE headers and
+          instructions, and instructions led to memory layouts, data and file formats, and eventually to the computational
+          machinery and electrical currents beneath the interfaces we use everyday.
+        </p>
+        <p>
+          I learn by building. Sometimes that's a conventional application; more often it's a tool built to understand a technology or
+          elimiate a repetitive task. Whenever I pick up a new language, my ritual is to implement DES by hand. Bit by bit, table by
+          table. By the time a cipher encrypts correctly, I've mapped the language's rough edges.
+        </p>
+        <p>
+          I'm not a senior engineer and I don't larp as one on the internet. These projects are the working notes of a developing programmer,
+          presented as honestly as I can - including what's unfinished.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-h">
+      <h2 id="contact-h" class="sec-h"><span>05</span>contact</h2>
+      <ul class="contact-list">
+        <li><a href="https://github.com/wwobbiee" rel="noopener">github: <span>@wwobbiee</span></a></li>
+        <li><a href="mailto:contact@wobbie.me">mail: <span>contact@wobbie.me</span></a></li>
+        <li><a href="https://wobbie.me">site: <span>You're looking at it.</span></a></li>
+      </ul>
+    </section>
   </main>
+
+  <footer>
+    <span>WOBBIE.me - built by hand: vanilla js, tailwind v4, three.js</span>
+    <span>&copy; 2026 Robbie Yamashita. All rights reserved.</span>
+    <span>no frameworks were harmed &middot; content is data-driven (js/data.js, js/main.mjs)</span>
+  </footer>
+
+  <aside id="detail" class="detail" role="dialog" aria-modal="false" aria-label="Project detail" aria-hidden="true">
+    <div class="detail-wrapper">
+      <button id="detail-close" class="detail-close">close [esc]</button>
+      <div id="detail-body"></div>
+    </div>
+  </aside>
+
+  <div id="cmdbar" class="cmdbar" hidden>
+    <div id="cmd-log" class="cmd-log" aria-live="polite"></div>
+    <div class="cmd-line">
+      <span class="cmd-prompt">:</span>
+      <input id="cmd-input" type="text" autocomplete="off" spellcheck="false" aria-label="Command input" placeholder="help">
+    </div>
+  </div>
+
+  <div id="debug" class="debugger" hidden aria-hidden="true">
+    <div class="dbg-row">
+      <span>FPS</span>
+      <span id="d-fps">--</span>
+    </div>
+    <div class="dbg-row">
+      <span>PTR</span>
+      <span id="d-ptr">--</span>
+    </div>
+    <div class="dbg-row">
+      <span>TCH</span>
+      <span id="d-tch">--</span>
+    </div>
+    <div class="dbg-row">
+      <span>TILT</span>
+      <span id="d-tilt">--</span>
+    </div>
+    <div class="dbg-row">
+      <span>SCROLL</span>
+      <span id="d-scr">--</span>
+    </div>
+    <div class="dbg-row">
+      <span>LENS</span>
+      <span id="d-lens">core</span>
+    </div>
+    <div class="dbg-row">
+      <span>HEAP</span>
+      <span id="d-hex">0x0000</span>
+    </div>
+    <div class="dbg-trace" id="d-trace"></div>
+  </div>
 </body>
 </html>
