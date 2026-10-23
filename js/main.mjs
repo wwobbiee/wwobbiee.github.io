@@ -107,7 +107,7 @@ function openProject(id, push) {
       </div>
       ${
         p.link
-          ? `<a class="d-link" href="${p.link}" rel="noopener">view source / repo &rarr;</a>`
+          ? `<a class="d-link" href="${p.link}" rel="noopener" target="_blank">view source / repo &rarr;</a>`
           : '<span class="d-link d-link-off">source - private until it deserves to be public</span>'
       }
     `

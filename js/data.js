@@ -210,7 +210,7 @@ export const PROJECTS = [
     problem: 'Repetitive media and file tasks: converting, renaming, extracting, checking, batching. Each one is small, but together they eat time and attention.',
     approach: 'Small, composable command-line tools, most of them wrapping FFmpeg for the heavy lifting. The design rule is that a tool must justify its existence the third time the task comes up; otherwise the shell history entry was enough.',
     statusNote: 'Continuously growing and being pruned. Somet ools graduate into regular use, some get deleted when the workflow changes. That is the point of the collection.',
-    link: ''
+    link: 'https://github.com/wwobbiee/WobbiesToolBox'
   }
 ]
 
