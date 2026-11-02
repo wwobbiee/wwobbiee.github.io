@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="robots" content="max-image-preview:large">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Robbie Yamashita">
   <meta name="description" content="Robbie Yamashita's portfolio | Cybersecurity, low-level systems, and software projects.">
+  <meta name="theme-color" content="#090909">
+  <meta name="color-scheme" content="dark">
 
   <meta property="og:site_name" content="Robbie Yamashita">
   <meta property="og:title" content="Robbie Yamashita | Systems & Web Developer">
   <meta property="og:description" content="Cybersecurity, low-level systems, and software projects.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:url" content="https://wobbie.me/">
   <meta property="og:image" content="https://wobbie.me/assets/images/main-og.png">
   <meta property="og:image:alt" content="A 3D canvas-rendered graphic calling card for Robbie Yamashita's portfolio.">
@@ -22,13 +27,75 @@
   <meta name="twitter:image" content="https://wobbie.me/assets/images/main-og.png">
   <meta name="twitter:image:alt" content="A 3D canvas-rendered graphic calling card for Robbie Yamashita's portfolio.">
 
-  <title>Robbie Yamashita | Systems & Web Developer</title>
+  <title>Robbie Yamashita | Systems &amp; Web Developer</title>
+  <link rel="canonical" href="https://wobbie.me/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <link rel="stylesheet" href="styles/main.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script type="module" src="js/main.mjs"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://wobbie.me/#website",
+          "url": "https://wobbie.me/",
+          "name": "Robbie Yamashita",
+          "description": "The portfolio of Robbie Yamashita, a systems and web developer.",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://wobbie.me/#person"
+          },
+          "hasPart": [
+            {
+              "@id": "https://wobbie.me/nfo/#webpage"
+            },
+            {
+              "@id": "https://wobbie.me/rfc/#webpage"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://wobbie.me/#person",
+          "name": "Robbie Yamashita",
+          "alternateName": "Wobbie",
+          "url": "https://wobbie.me/",
+          "sameAs": [
+            "https://github.com/wwobbiee"
+          ],
+          "knowsAbout": [
+            "Software Development",
+            "Cybersecurity",
+            "Reverse Engineering",
+            "Cryptography",
+            "Web Development",
+            "Data Processing"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://wobbie.me/#webpage",
+          "url": "https://wobbie.me/",
+          "name": "Robbie Yamashita | Systems & Web Developer",
+          "description": "Robbie Yamashita's portfolio | Cybersecurity, low-level systems, and software projects.",
+          "inLanguage": "en",
+          "isPartOf": {
+            "@id": "https://wobbie.me/#website"
+          },
+          "author": {
+            "@id": "https://wobbie.me/#person"
+          },
+          "about": {
+            "@id": "https://wobbie.me/#person"
+          }
+        }
+      ]
+    }
+  </script>
   <noscript>
     <meta http-equiv="refresh" content="0; url=./nfo/">
   </noscript>
@@ -143,7 +210,7 @@
     <section id="contact" class="section" aria-labelledby="contact-h">
       <h2 id="contact-h" class="sec-h"><span>05</span>contact</h2>
       <ul class="contact-list">
-        <li><a href="https://github.com/wwobbiee" rel="noopener">github: <span>@wwobbiee</span></a></li>
+        <li><a href="https://github.com/wwobbiee" rel="me noopener" target="_blank">github: <span>@wwobbiee</span></a></li>
         <li><a href="mailto:contact@wobbie.me">mail: <span>contact@wobbie.me</span></a></li>
         <li><a href="https://wobbie.me">site: <span>You're looking at it.</span></a></li>
       </ul>
