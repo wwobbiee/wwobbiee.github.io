@@ -110,7 +110,7 @@ export const PROJECTS = [
     problem: 'Every rhythm game speaks its own beatmap dialect. Charts people care about are locked inside format-specific silos, and existing converters tend to cover one narrow pariring at a time.',
     approach: 'Each supported format gets a parser that maps onto a single intermediate representation; timing, lanes, notes, and metadata as plain data. Converters are just parser/serializer pairs, which makes adding a new format a matter of writing one side of the mapping. Assets (audio, images) are pullef from the game specific archive/format during extraction.',
     statusNote: 'osu! parsing is the furthest along. Quaver, StepMania and beatmania are targeted formats, not finished ones; treat support as partial until the parser tables say otherwise. Beatmap editing is future work, not a shipped feature.',
-    link: ''
+    link: 'https://github.com/wwobbiee/UBE'
   },
   {
     n:      '03',
